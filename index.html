@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled</title>
+  
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enciclopedia Gastronómica</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="app">
+        <header>Enciclopedia Gastronómica</header>
+        <div id="contenido">
+            <!-- Lista de ingredientes -->
+            <div id="ingredientes" class="ingredientes">
+                <div class="ingrediente" onclick="mostrarDetalle('tomate')">
+                    <h3>Tomate</h3>
+                </div>
+                <div class="ingrediente" onclick="mostrarDetalle('pimiento')">
+                    <h3>Pimiento</h3>
+                </div>
+                <div class="ingrediente" onclick="mostrarDetalle('ajo')">
+                    <h3>Ajo</h3>
+                </div>
+                <div class="ingrediente" onclick="mostrarDetalle('cebolla')">
+                    <h3>Cebolla</h3>
+                </div>
+                <div class="ingrediente" onclick="mostrarDetalle('perejil')">
+                    <h3>Perejil</h3>
+                </div>
+                <div class="ingrediente" onclick="mostrarDetalle('papa')">
+                    <h3>Papa</h3>
+                </div>
+                <div class="ingrediente" onclick="mostrarDetalle('zanahoria')">
+                    <h3>Zanahoria</h3>
+                </div>
+                <div class="ingrediente" onclick="mostrarDetalle('albahaca')">
+                    <h3>Albahaca</h3>
+                </div>
+                <div class="ingrediente" onclick="mostrarDetalle('aceite_de_oliva')">
+                    <h3>Aceite de Oliva</h3>
+                </div>
+                <div class="ingrediente" onclick="mostrarDetalle('tomillo')">
+                    <h3>Tomillo</h3>
+                </div>
+                <div class="ingrediente" onclick="mostrarDetalle('laurel')">
+                    <h3>Laurel</h3>
+                </div>
+                <div class="ingrediente" onclick="mostrarDetalle('romero')">
+                    <h3>Romero</h3>
+                </div>
+                <div class="ingrediente" onclick="mostrarDetalle('orégano')">
+                    <h3>Orégano</h3>
+                </div>
+                <div class="ingrediente" onclick="mostrarDetalle('almejas')">
+                    <h3>Almejas</h3>
+                </div>
+                <div class="ingrediente" onclick="mostrarDetalle('pollo')">
+                    <h3>Pollo</h3>
+                </div>
+                <div class="ingrediente" onclick="mostrarDetalle('carne_res')">
+                    <h3>Carne de Res</h3>
+                </div>
+                <div class="ingrediente" onclick="mostrarDetalle('cerdo')">
+                    <h3>Cerdo</h3>
+                </div>
+                <div class="ingrediente" onclick="mostrarDetalle('arroz')">
+                    <h3>Arroz</h3>
+                </div>
+                <div class="ingrediente" onclick="mostrarDetalle('pasta')">
+                    <h3>Pasta</h3>
+                </div>
+                <div class="ingrediente" onclick="mostrarDetalle('harina')">
+                    <h3>Harina</h3>
+                </div>
+                <div class="ingrediente" onclick="mostrarDetalle('huevo')">
+                    <h3>Huevo</h3>
+                </div>
+            </div>
+
+            <!-- Detalle de ingrediente seleccionado -->
+            <div class="detalle" id="detalle">
+                <h2>Selecciona un ingrediente</h2>
+                <p>Haz clic en un ingrediente para ver más detalles.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Datos de ingredientes
+        const ingredientes = {
+            tomate: {
+                nombre: "Tomate",
+                descripcion: "El tomate es una fruta consumida como verdura, rica en vitamina C. Es la base de muchas salsas, sopas y ensaladas.",
+                usos: "Ideal para salsas, ensaladas, sopas, guisos, y pizzas."
+            },
+            pimiento: {
+                nombre: "Pimiento",
+                descripcion: "El pimiento es una hortaliza muy versátil, con un sabor que varía según su madurez. Se puede encontrar en colores rojo, verde y amarillo.",
+                usos: "Se usa crudo en ensaladas o asado en platos como los tacos."
+            },
+            ajo: {
+                nombre: "Ajo",
+                descripcion: "El ajo es un bulbo aromático utilizado en la cocina para dar sabor y aroma a los platos. Además, tiene propiedades medicinales.",
+                usos: "Se usa en salsas, guisos, platos mediterráneos y en el sofrito."
+            },
+            cebolla: {
+                nombre: "Cebolla",
+                descripcion: "La cebolla es un vegetal esencial en muchas cocinas del mundo. Su sabor varía según el tipo y la preparación.",
+                usos: "Es común en guisos, sopas, ensaladas y como base en la preparación de sofritos."
+            },
+            perejil: {
+                nombre: "Perejil",
+                descripcion: "El perejil es una hierba fresca utilizada para dar sabor y decorar platos.",
+                usos: "Se utiliza en ensaladas, sopas y como aderezo en diversos platos."
+            },
+            papa: {
+                nombre: "Papa",
+                descripcion: "La papa es un tubérculo que se cultiva en muchas regiones del mundo. Es una fuente importante de carbohidratos.",
+                usos: "Se usa en purés, guisos, fritas y asadas."
+            },
+            zanahoria: {
+                nombre: "Zanahoria",
+                descripcion: "La zanahoria es una raíz comestible de color naranja, rica en vitamina A.",
+                usos: "Se consume cruda en ensaladas, cocida en sopas, o como acompañante en guisos."
+            },
+            albahaca: {
+                nombre: "Albahaca",
+                descripcion: "La albahaca es una planta aromática que se utiliza principalmente en la cocina mediterránea.",
+                usos: "Se utiliza en salsas como el pesto, en ensaladas o como condimento para carnes."
+            },
+            aceite_de_oliva: {
+                nombre: "Aceite de Oliva",
+                descripcion: "El aceite de oliva es un producto natural extraído de las aceitunas. Es muy apreciado por sus propiedades saludables.",
+                usos: "Es ideal para aderezos, cocinar a la plancha o en ensaladas."
+            },
+            tomillo: {
+                nombre: "Tomillo",
+                descripcion: "El tomillo es una hierba aromática utilizada principalmente en la cocina mediterránea.",
+                usos: "Se usa en guisos, sopas y carnes a la parrilla."
+            },
+            laurel: {
+                nombre: "Laurel",
+                descripcion: "El laurel es una hoja aromática que se utiliza para dar sabor en guisos y sopas.",
+                usos: "Se utiliza principalmente en guisos, sopas y caldos."
+            },
+            romero: {
+                nombre: "Romero",
+                descripcion: "El romero es una planta aromática que se utiliza tanto fresca como seca.",
+                usos: "Ideal para condimentar carnes, especialmente cordero y pollo."
+            },
+            oregano: {
+                nombre: "Orégano",
+                descripcion: "El orégano es una hierba aromática que se utiliza en muchas cocinas del mundo, especialmente en la cocina italiana.",
+                usos: "Perfecto para pizzas, pastas y salsas."
+            },
+            almejas: {
+                nombre: "Almejas",
+                descripcion: "Las almejas son mariscos que se encuentran en la arena del mar. Son ricas en proteínas y minerales.",
+                usos: "Se utilizan en sopas, pastas y como aperitivos."
+            },
+            pollo: {
+                nombre: "Pollo",
+                descripcion: "El pollo es una de las carnes más consumidas en el mundo. Es rico en proteínas y es muy versátil.",
+                usos: "Se puede asar, freír, guisar, y usar en sopas."
+            },
+            carne_res: {
+                nombre: "Carne de Res",
+                descripcion: "La carne de res es la carne proveniente de los bovinos. Tiene un sabor fuerte y es rica en proteínas y hierro.",
+                usos: "Ideal para hacer asados, guisos, hamburguesas y estofados."
+            },
+            cerdo: {
+                nombre: "Cerdo",
+                descripcion: "La carne de cerdo es muy común en muchas partes del mundo. Tiene un sabor delicado y es rica en grasas saludables.",
+                usos: "Se usa para hacer chuletas, tocino, guisos y embutidos."
+            },
+            arroz: {
+                nombre: "Arroz",
+                descripcion: "El arroz es un grano básico en muchas culturas, especialmente en Asia y América Latina.",
+                usos: "Se sirve como acompañante, en ensaladas, sopas o como base para sushi."
+            },
+            pasta: {
+                nombre: "Pasta",
+                descripcion: "La pasta es un alimento tradicional de la cocina italiana, hecho de harina de trigo y agua.",
+                usos: "Ideal para preparar platos como espaguetis, lasañas y raviolis."
+            },
+            harina: {
+                nombre: "Harina",
+                descripcion: "La harina es un polvo fino obtenido a partir de granos triturados. Es la base de muchos productos de panadería.",
+                usos: "Se utiliza para hacer pan, pasteles, galletas y pastas."
+            },
+            huevo: {
+                nombre: "Huevo",
+                descripcion: "El huevo es un alimento muy nutritivo, rico en proteínas, vitaminas y minerales.",
+                usos: "Se utiliza en tortillas, pasteles, sopas y como ingrediente en salsas."
+            }
+        };
+
+        // Función para mostrar detalles de un ingrediente
+        function mostrarDetalle(ingrediente) {
+            const detalle = ingredientes[ingrediente];
+            const detalleElemento = document.getElementById('detalle');
+
+            detalleElemento.innerHTML = `
+                <h2>${detalle.nombre}</h2>
+                <p><strong>Descripción:</strong> ${detalle.descripcion}</p>
+                <p><strong>Usos comunes:</strong> ${detalle.usos}</p>
+            `;
+        }
+    </script>
+</body>
+</html>
+<!-- partial -->
+  
+</body>
+</html>
